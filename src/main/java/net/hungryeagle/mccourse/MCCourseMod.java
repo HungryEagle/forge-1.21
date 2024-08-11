@@ -2,6 +2,7 @@ package net.hungryeagle.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.hungryeagle.mccourse.block.ModBlocks;
+import net.hungryeagle.mccourse.item.ModCreativeModeTabs;
 import net.hungryeagle.mccourse.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +29,7 @@ public class MCCourseMod {
 
     public MCCourseMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
